@@ -1,0 +1,44 @@
+.table {
+  border-collapse: collapse;
+  border: none;
+  width: 100%;
+}
+
+.tableRowHeader {
+  background-color: transparent;
+  transition: all 0.25s ease;
+  border-radius: 10px;
+}
+
+.tableHeader {
+  background-color: #47a966c9;
+  padding: 12px;
+  text-align: left;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.tableHeader:first-child {
+  border-top-left-radius: 15px;
+}
+
+.tableHeader:last-child {
+  border-top-right-radius: 15px;
+}
+
+.tableRowItems {
+  cursor: auto;
+}
+
+.tableRowItems:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.tableCell {
+  padding: 12px;
+  font-size: 17px;
+  color: rgb(43, 30, 30);
+  border-right: 1px solid rgb(187, 174, 174);
+  
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

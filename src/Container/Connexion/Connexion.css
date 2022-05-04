@@ -1,0 +1,38 @@
+.connexion {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .connexion-left {
+    display: flex;
+    flex: 0.4;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+  }
+  
+  .connexion-right {
+    display: flex;
+    flex: 0.6;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../../assets/login-coverImage.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  @media screen and (max-width: 540px) {
+    .connexion {
+      flex-direction: "column";
+    }
+    .connexion-left {
+      flex: 1;
+    }
+  
+    .connexion-right {
+      display: none;
+    }
+  }
+  

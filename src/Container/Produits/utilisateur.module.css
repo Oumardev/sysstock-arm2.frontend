@@ -1,0 +1,67 @@
+.container {
+  padding: 20px;
+  padding-top: 0px;
+}
+
+.tableau{
+  width: inherit;
+  overflow-x: scroll;
+}
+
+.title{
+font-weight: 700;
+font-family: unset;
+}
+
+.trtr{
+  display: flex;
+  padding: 16px;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_tr{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+}
+
+.search_btn{
+  height: 42px;
+  margin:10px;
+  border-radius: 10px; 
+  border: #d6cfcf 1px solid;
+  padding-left: 21px;
+  font-family: cursive;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.addUser_btn{
+  text-align: center;
+  margin: 10px;
+  text-decoration: none;
+  background-color: rgb(39, 63, 36);
+  box-shadow: 3px 5px 5px #d3c4c4;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.search_btn:focus{
+  outline: none;
+  border: #d3d6cf 1px solid; 
+}
+
+.wrapper {
+  
+}

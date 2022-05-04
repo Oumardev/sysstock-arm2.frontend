@@ -1,0 +1,64 @@
+.error-msg{
+    color: red;
+}
+
+.modal-content{
+    border-radius: 18px;
+}
+
+.form-control{
+    border-radius: 10px;
+}
+
+.form-control:focus{
+    outline: none;
+    border: #d3d6cf 1px solid;
+}
+
+.modal-header {
+    border-bottom: 0px;
+    margin: 10px;
+}
+
+.modal-header h5{
+    font-weight: 700;
+}
+
+.close{
+    background-color: #d4cfcfe8;
+}
+
+.modal-footer{
+    background-color: ghostwhite;
+}
+
+.btn-cancel {
+    color: #150404;
+    border: none;
+    padding: 10px;
+    width: 25%;
+    border-radius: 15px;
+    font-weight: 500;
+    color: grey;
+}
+
+.btn-add {
+    color: #150404;
+    border: none;
+    background-color: salmon;
+    padding: 10px;
+    width: 40%;
+    border-radius: 15px;
+    font-weight: 500;
+    color: white;
+}
+
+.info_user{
+    margin: 10px;
+    padding: 5px;
+    background-color: #1b1b1b;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
