@@ -64,6 +64,9 @@ function EditVarieteModal({dataModal : { id, nom ,description, origin, image_bas
           .required('Champs requis')
 });
       
+ function WayMe(){
+     
+ }
     
     return(
         <React.Fragment>
