@@ -63,11 +63,7 @@ function EditVarieteModal({dataModal : { id, nom ,description, origin, image_bas
         description: Yup.string()
           .required('Champs requis')
 });
-      
- function WayMe(){
-     
- }
-    
+ 
     return(
         <React.Fragment>
             <div className="modal fade" id="editProduit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
