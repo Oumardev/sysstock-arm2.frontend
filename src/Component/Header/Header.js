@@ -24,23 +24,23 @@ function Header() {
             <h3>SysStock</h3>
         </div>
         
-        <Link to={"/dashbord"}><li><a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashbord</a></li></Link>
-        <Link to={"/utilisateur"}><li><a href="#"><i class="fa fa-users" aria-hidden="true"></i>Utilisateurs</a></li></Link>
-        <li><Link to={"/produit"}><a href="#"><i class="fa fa-product-hunt" aria-hidden="true"></i>Produits <i class="fa fa-chevron-down" aria-hidden="true"></i></a></Link>
+        <Link to={"/dashbord"}><li><a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i> <p>Dashbord</p></a></li></Link>
+        <Link to={"/utilisateur"}><li><a href="#"><i class="fa fa-users" aria-hidden="true"></i> <p>Utilisateurs</p></a></li></Link>
+        <li><Link to={"/produit"}><a href="#"><i class="fa fa-product-hunt" aria-hidden="true"></i><p>Produits</p> <i class="fa fa-chevron-down" aria-hidden="true"></i></a></Link>
           <ul className="sub-menu">
-            <Link to={"/produit"}><li>Produits</li></Link>
-            <Link to={"/variete"}><li>Variétés</li></Link>
+            <Link to={"/produit"}><li> <p>Produits</p></li></Link>
+            <Link to={"/variete"}><li> <p>Variétés</p></li></Link>
           </ul>
         </li>
         
-        <li><Link to={"/marche"}><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i>Marché <i class="fa fa-chevron-down" aria-hidden="true"></i></a></Link>
+        <li><Link to={"/marche"}><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><p>Marché</p> <i class="fa fa-chevron-down" aria-hidden="true"></i></a></Link>
           <ul className="sub-menu">
             <Link to={"/marche"}><li>Marché</li></Link>
             <Link to={"/prixmarche"}><li>Prix marché</li></Link>
           </ul>
         </li>
 
-        <li><Link to={"/parcs"}><i class="fa fa-bus" aria-hidden="true"></i>Parcs <i class="fa fa-chevron-down" aria-hidden="true"></i></Link>
+        <li><Link to={"/parcs"}><i class="fa fa-bus" aria-hidden="true"></i><p>Parcs</p> <i class="fa fa-chevron-down" aria-hidden="true"></i></Link>
           <ul className="sub-menu">
             <Link to={"/parcs"}><li>Parcs</li></Link>
             <Link to={"/prixparcs"}><li>Prix parcs</li></Link>

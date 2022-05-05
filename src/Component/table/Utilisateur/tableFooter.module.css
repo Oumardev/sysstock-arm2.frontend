@@ -13,6 +13,11 @@
     align-items: center;
     justify-content: center;
   }
+  @media screen and (max-width: 768px) {
+    .tableFooter {
+      width: 140%;
+    }
+  }
   
   .button {
     border: none;

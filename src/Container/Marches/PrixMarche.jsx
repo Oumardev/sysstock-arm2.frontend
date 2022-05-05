@@ -51,11 +51,9 @@ function PrixMarcheContainer() {
     return newmarc
   }
 
-  console.log('ls_prix Marché: ',ls_prixMarche)
    useEffect(() => {
      
       if(localStorage.getItem("isLogin") == 'true'){
-        console.log('tu est connecté')
 
         dispatch(listMarche())
         dispatch(listVariete())

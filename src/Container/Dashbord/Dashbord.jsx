@@ -15,7 +15,6 @@ function DashbordContainer() {
    useEffect(() => {
      
       if(localStorage.getItem("isLogin") == 'true'){
-        console.log('tu est connecté')
       }else{
         localStorage.clear()
         navigate('/')
@@ -27,17 +26,11 @@ function DashbordContainer() {
       }
     }, [isError]);
     
-    const onLogOut = () => {
-      localStorage.clear()
-      navigate('/')
-    };
-
     return (
       <>
         <Header />
         <div className="content">
             <img class="img-construct" src={underConstruct} alt="en construction" />
-            
         </div>
       </>
     );

@@ -48,11 +48,9 @@ function MarcheContainer() {
     return newmarc
   }
 
-  console.log('ls marche: ',ls_marche)
    useEffect(() => {
      
       if(localStorage.getItem("isLogin") == 'true'){
-        console.log('tu est connecté')
 
         dispatch(getRegionDepartementCommune())
         dispatch(getZone())

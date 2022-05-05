@@ -32,6 +32,12 @@
     background-color: whitesmoke;
   }
 
+  @media screen and (max-width: 768px) {
+    .header_tr {
+      width: 132%;
+    }
+  }
+  
   .search_btn{
     height: 42px;
     margin:10px;
