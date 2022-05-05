@@ -49,10 +49,10 @@ const Profile = () =>{
                         <div className="infoContainer">
                             <img style={styles.pp} src={user.photo_base64 ?? pp} alt="User profile picture" />
 
-                            <p>Nom : {user.user.first_name}</p>
-                            <p>Prénom : {user.user.last_name}</p>
-                            <p>Email : {user.user.email}</p>
-                            <p>Username : {user.user.username}</p>
+                            <h6>Nom : {user.user.first_name}</h6>
+                            <h6>Prénom : {user.user.last_name}</h6>
+                            <h6>Email : {user.user.email}</h6>
+                            <h6>Username : {user.user.username}</h6>
 
                             <a style={{color:'red'}} type="button" data-toggle="modal" onClick={()=> setShowModal(true)} data-target="#editPasswordModal" data-whatever="@fat" class="btn btn-link">Modifier le mot de passe</a>
                         </div>

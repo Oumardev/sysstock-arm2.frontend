@@ -27,6 +27,7 @@ function PrixMarcheContainer() {
 
   const [showModal, setShowModal] = useState(false)
   const [searchData, setSearchData] = useState(null)
+  const [widhdevice, setWidhdevice] = useState(window.innerWidth)
 
   const preprocess_prixmarche = (data) =>{
     let newmarc = []
@@ -54,7 +55,6 @@ function PrixMarcheContainer() {
    useEffect(() => {
      
       if(localStorage.getItem("isLogin") == 'true'){
-
         dispatch(listMarche())
         dispatch(listVariete())
         dispatch(listPrixMarche())
@@ -70,10 +70,12 @@ function PrixMarcheContainer() {
       }
     }, [isError, prixMarUpdated]);
     
-    const onLogOut = () => {
-      localStorage.clear()
-      navigate('/')
-    };
+    function reportWindowSize() {
+      setWidhdevice(window.innerWidth)
+    }
+
+    window.onresize = reportWindowSize;
+    var rowperpage = widhdevice <= 820 ? 10 : 4
 
     const handleSearch = (e) =>{
       let searchValues = e.target.value
@@ -105,7 +107,7 @@ function PrixMarcheContainer() {
           </div>
             <main className={styles.container}>
               <div className={styles.wrapper}>
-                {isFetching ? <Spinner /> : <Table data={searchData ? searchData :ls_prixMarche} rowsPerPage={4} />}
+                {isFetching ? <Spinner /> : <Table data={searchData ? searchData :ls_prixMarche} rowsPerPage={rowperpage} />}
               </div>
             </main>
         </div>

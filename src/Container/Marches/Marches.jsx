@@ -26,6 +26,7 @@ function MarcheContainer() {
 
   const [showModal, setShowModal] = useState(false)
   const [searchData, setSearchData] = useState(null)
+  const [widhdevice, setWidhdevice] = useState(window.innerWidth)
 
   const preprocess_marche = (data) =>{
     let newmarc = []
@@ -51,7 +52,6 @@ function MarcheContainer() {
    useEffect(() => {
      
       if(localStorage.getItem("isLogin") == 'true'){
-
         dispatch(getRegionDepartementCommune())
         dispatch(getZone())
         dispatch(listMarche())
@@ -65,11 +65,13 @@ function MarcheContainer() {
         navigate('/')
       }
     }, [isError, marUpdated]);
-    
-    const onLogOut = () => {
-      localStorage.clear()
-      navigate('/')
-    };
+
+    function reportWindowSize() {
+      setWidhdevice(window.innerWidth)
+    }
+
+    window.onresize = reportWindowSize;
+    var rowperpage = widhdevice <= 820 ? 10 : 4
 
     const handleSearch = (e) =>{
       let searchValues = e.target.value
@@ -105,7 +107,7 @@ function MarcheContainer() {
           </div>
             <main className={styles.container}>
               <div className={styles.wrapper}>
-                {isFetching ? <Spinner /> : <Table RegionDepartementCommune={RegionDepartementCommune} ls_zone={ls_zone} data={searchData ? searchData :ls_marche} rowsPerPage={4} />}
+                {isFetching ? <Spinner /> : <Table RegionDepartementCommune={RegionDepartementCommune} ls_zone={ls_zone} data={searchData ? searchData :ls_marche} rowsPerPage={widhdevice} />}
               </div>
             </main>
             </div>

@@ -26,6 +26,7 @@ function VarieteContainer() {
   const navigate = useNavigate()
 
   const [searchData, setSearchData] = useState(null)
+  const [widhdevice, setWidhdevice] = useState(window.innerWidth)
 
   const preprocess_variete = (data) =>{
     let newvar = []
@@ -47,7 +48,6 @@ function VarieteContainer() {
    useEffect(() => {
      
       if(localStorage.getItem("isLogin") == 'true'){
-        console.log('tu est connecté')
         dispatch(listVariete())
 
       }else{
@@ -61,10 +61,12 @@ function VarieteContainer() {
       }
     }, [isError, varUpdated]);
     
-    const onLogOut = () => {
-      localStorage.clear()
-      navigate('/')
-    };
+    function reportWindowSize() {
+      setWidhdevice(window.innerWidth)
+    }
+
+    window.onresize = reportWindowSize;
+    var rowperpage = widhdevice <= 820 ? 10 : 4
 
     const handleSearch = (e) =>{
       let searchValues = e.target.value
@@ -94,7 +96,7 @@ function VarieteContainer() {
         </div>
           <main className={styles.container}>
             <div className={styles.wrapper}>
-              {isFetching ? <Spinner /> : <Table data={searchData ? searchData :ls_variete} rowsPerPage={4} />}
+              {isFetching ? <Spinner /> : <Table data={searchData ? searchData :ls_variete} rowsPerPage={rowperpage} />}
             </div>
           </main>
         </div>

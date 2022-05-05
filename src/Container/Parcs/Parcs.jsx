@@ -27,6 +27,7 @@ function ParcContainer() {
 
   const [showModal, setShowModal] = useState(false)
   const [searchData, setSearchData] = useState(null)
+  const [widhdevice, setWidhdevice] = useState(window.innerWidth)
 
   const dispatch = useDispatch();
   const navigate = useNavigate()
@@ -53,7 +54,6 @@ function ParcContainer() {
     useEffect(() => {
      
       if(localStorage.getItem("isLogin") == 'true'){
-        console.log('tu est connecté')
 
         dispatch(getRegionDepartementCommune())
         dispatch(getZone())
@@ -71,6 +71,12 @@ function ParcContainer() {
       }
     }, [parcUpdated]);
 
+    function reportWindowSize() {
+      setWidhdevice(window.innerWidth)
+    }
+
+    window.onresize = reportWindowSize;
+    var rowperpage = widhdevice <= 820 ? 10 : 4
 
     const handleSearch = (e) =>{
       let searchValues = e.target.value
@@ -103,7 +109,7 @@ function ParcContainer() {
         </div>
           <main className={styles.container}>
             <div className={styles.wrapper}>
-              {isFetching ? <Spinner /> : <Table RegionDepartementCommune={RegionDepartementCommune} ls_zone={ls_zone} data={searchData ? searchData :ls_parc} rowsPerPage={4} />}
+              {isFetching ? <Spinner /> : <Table RegionDepartementCommune={RegionDepartementCommune} ls_zone={ls_zone} data={searchData ? searchData :ls_parc} rowsPerPage={rowperpage} />}
             </div>
           </main>
           </div>

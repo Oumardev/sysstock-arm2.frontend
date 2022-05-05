@@ -26,6 +26,7 @@ function UtilisateurContainer() {
 
   const [showModal, setShowModal] = useState(false)
   const [searchData, setSearchData] = useState(null)
+  const [widhdevice, setWidhdevice] = useState(window.innerWidth)
 
    useEffect(() => {
      
@@ -43,10 +44,14 @@ function UtilisateurContainer() {
       }
     }, [isError, userUpdated]);
     
-    const onLogOut = () => {
-      localStorage.clear()
-      navigate('/')
-    };
+
+    function reportWindowSize() {
+      setWidhdevice(window.innerWidth)
+    }
+
+    window.onresize = reportWindowSize;
+    var rowperpage = widhdevice <= 820 ? 10 : 4
+ 
 
     const handleSearch = (e) =>{
       let searchValues = e.target.value
@@ -78,7 +83,7 @@ function UtilisateurContainer() {
               </div>
                 <main className={styles.container}>
                   <div className={styles.wrapper}>
-                    {isFetching ? <Spinner /> : <Table data={searchData ? searchData :ls_users} rowsPerPage={4} />}
+                    {isFetching ? <Spinner /> : <Table data={searchData ? searchData :ls_users} rowsPerPage={rowperpage} />}
                   </div>
                 </main>
             </div>
