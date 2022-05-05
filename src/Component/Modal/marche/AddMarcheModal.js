@@ -2,7 +2,7 @@ import React, {useState, useEffect } from "react";
 import './modal.css'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
-import { userSelector , getRegionDepartementCommune, addMarche, getZone } from "../../../slices/userSlice";
+import { marcheSelector , getRegionDepartementCommune, addMarche, getZone } from "../../../slices/marcheSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const modalStyle = {
@@ -49,7 +49,7 @@ function AddMarcheModal({setShowModal}) {
     const [departement, setDepartement] = useState([])
     const [commune, setCommune] = useState([])
     const dispatch = useDispatch()
-    const { RegionDepartementCommune , ls_zone} = useSelector(userSelector)
+    const { RegionDepartementCommune , ls_zone} = useSelector(marcheSelector)
 
     useEffect(()=>{
         dispatch(getRegionDepartementCommune())

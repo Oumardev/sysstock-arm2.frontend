@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import './modal.css'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
-import { userSelector, editPrixParc } from "../../../slices/userSlice";
+import { parcSelector, editPrixParc } from "../../../slices/parcSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const modalStyle = {
@@ -45,7 +45,7 @@ const modalStyle = {
 
 function EditPrixParcModal({dataModal : { id ,variete, parc, prix_bascule, prix_sac, quantite_stockee } ,setShowModal}) {
 
-    const { ls_variete , ls_parc} = useSelector(userSelector)
+    const { ls_variete , ls_parc} = useSelector(parcSelector)
 
     const dispatch = useDispatch()
 

@@ -1,6 +1,6 @@
 import React, {useState } from "react";
 import icon_profile from '../../../assets/profile-picture.svg'
-import { addVariete } from "../../../slices/userSlice";
+import { addVariete } from "../../../slices/varieteSlice";
 import convertImgToBase64 from '../../../Utils/helpers'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";

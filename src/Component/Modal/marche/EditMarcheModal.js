@@ -2,7 +2,7 @@ import React, {useState, useEffect } from "react";
 import './modal.css'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
-import { editMarche } from "../../../slices/userSlice";
+import { editMarche } from "../../../slices/marcheSlice";
 import { useDispatch } from "react-redux";
 
 const modalStyle = {

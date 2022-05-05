@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { userSelector, clearState, listMarche, getRegionDepartementCommune, getZone } from "../../slices/userSlice";
-import { useSelector, useDispatch } from 'react-redux';
+import { marcheSelector, clearState, listMarche, getRegionDepartementCommune, getZone } from "../../slices/marcheSlice";
+import { useSelector, useDispatch } from 'react-redux'
 import Header from '../../Component/Header/Header'
 import Footer from '../../Component/Footer/Footer'
-import { useNavigate } from 'react-router-dom';
 import Table from '../../Component/table/Marche/Table'
-import AddMarcheModal from '../../Component/Modal/marche/AddMarcheModal';
-import styles from "./marche.module.css"
+import AddMarcheModal from '../../Component/Modal/marche/AddMarcheModal'
 import { ExportCSV } from "../../ExportCSV.js"
+import { useNavigate } from 'react-router-dom'
+import styles from "./marche.module.css"
 
 const Spinner = () =>{
   return(
@@ -20,7 +20,7 @@ const Spinner = () =>{
 }
 
 function MarcheContainer() {
-  const { isFetching , isError, ls_marche, RegionDepartementCommune , ls_zone , marUpdated} = useSelector(userSelector);
+  const { isFetching , isError, ls_marche, RegionDepartementCommune , ls_zone , marUpdated} = useSelector(marcheSelector);
   const dispatch = useDispatch();
   const navigate = useNavigate()
 

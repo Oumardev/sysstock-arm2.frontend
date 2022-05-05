@@ -1,5 +1,6 @@
 import React, { useState , useEffect } from 'react'
-import { userSelector, clearState , listParc, listMarche, getRegionDepartementCommune, getZone } from "../../slices/userSlice";
+import { parcSelector, clearState , listParc } from "../../slices/parcSlice";
+import { marcheSelector , getRegionDepartementCommune, getZone , listMarche } from "../../slices/marcheSlice";
 import { useSelector, useDispatch } from 'react-redux';
 import Table from '../../Component/table/Parc/Table'
 import AddParcModal from '../../Component/Modal/parc/AddParcModal';
@@ -21,7 +22,9 @@ const Spinner = () =>{
 
 function ParcContainer() {
 
-  const { isFetching , ls_parc, isError, parcUpdated, RegionDepartementCommune , ls_zone } = useSelector(userSelector);
+  const { isFetching , isError ,ls_parc, parcUpdated } = useSelector(parcSelector);
+  const { RegionDepartementCommune , ls_zone } = useSelector(marcheSelector);
+
   const [showModal, setShowModal] = useState(false)
   const [searchData, setSearchData] = useState(null)
 

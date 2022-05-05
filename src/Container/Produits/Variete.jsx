@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { userSelector, clearState, listVariete } from "../../slices/userSlice";
+import { varieteSelector, clearState, listVariete } from "../../slices/varieteSlice";
 import { useSelector, useDispatch } from 'react-redux';
 import Header from '../../Component/Header/Header'
 import Footer from '../../Component/Footer/Footer'
@@ -20,7 +20,8 @@ const Spinner = () =>{
 }
 
 function VarieteContainer() {
-  const { isFetching, isError, ls_variete, varUpdated } = useSelector(userSelector);
+  const { isFetching, isError, ls_variete, varUpdated } = useSelector(varieteSelector);
+  
   const dispatch = useDispatch();
   const navigate = useNavigate()
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deletePrixParc } from '../../../slices/userSlice'
+import { deletePrixParc } from '../../../slices/parcSlice'
 
 const modalStyle = {
     body : {

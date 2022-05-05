@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteProduit } from '../../../slices/userSlice'
+import { deleteProduit } from '../../../slices/produitSlice'
 
 const modalStyle = {
     body : {

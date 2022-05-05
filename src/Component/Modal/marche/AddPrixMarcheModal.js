@@ -2,7 +2,8 @@ import React, {useState, useEffect } from "react";
 import './modal.css'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
-import { userSelector , listVariete, listMarche, addPrixMarche } from "../../../slices/userSlice";
+import { marcheSelector , listMarche, addPrixMarche } from "../../../slices/marcheSlice";
+import { varieteSelector , listVariete } from "../../../slices/varieteSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const modalStyle = {
@@ -46,7 +47,8 @@ const modalStyle = {
 function AddPrixMarcheModal({setShowModal}) {
 
     const dispatch = useDispatch()
-    const { ls_variete , ls_marche} = useSelector(userSelector)
+    const { ls_marche } = useSelector(marcheSelector)
+    const { ls_variete } = useSelector(varieteSelector)
 
     useEffect(()=>{
         dispatch(listVariete())

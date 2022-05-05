@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { listProductVariete, userSelector } from "../../../slices/userSlice";
+import { listProductVariete, varieteSelector } from "../../../slices/varieteSlice";
 import { useParams } from 'react-router';
 import { useDispatch, useSelector } from "react-redux";
 import Header from '../../Header/Header'
@@ -56,7 +56,7 @@ const ListProductVariete = ({ID_PRODUIT ,varietes})=>{
 // {id: 18, nom: 'TOMATE-CERISE', image_base64: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAQABAAD…AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//2Q==', description: 'Tomates cerise.', origine: 'local'}
 const InfoVarieteProduct = (props) =>{
 
-    const { ls_product_variete, varUpdated } = useSelector(userSelector)
+    const { ls_product_variete, varUpdated } = useSelector(varieteSelector)
     const dispatch = useDispatch()
     
     const { id } = useParams();

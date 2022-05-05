@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteVariete } from '../../../slices/userSlice'
+import { deleteVariete } from '../../../slices/varieteSlice'
 
 const modalStyle = {
     body : {

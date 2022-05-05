@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { userSelector, clearState, listProduit } from "../../slices/userSlice";
+import { produitSelector, clearState, listProduit } from "../../slices/produitSlice";
 import { useSelector, useDispatch } from 'react-redux';
 import Header from '../../Component/Header/Header'
 import Footer from '../../Component/Footer/Footer'
@@ -20,7 +20,7 @@ const Spinner = () =>{
 }
 
 function ProduitContainer() {
-  const { isFetching, isError, ls_produit, prodUpdated } = useSelector(userSelector);
+  const { isFetching, isError, ls_produit, prodUpdated } = useSelector(produitSelector);
   const dispatch = useDispatch();
   const navigate = useNavigate()
 

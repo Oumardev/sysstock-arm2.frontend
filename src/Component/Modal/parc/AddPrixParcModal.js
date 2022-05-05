@@ -2,7 +2,8 @@ import React, {useState, useEffect } from "react";
 import './modal.css'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
-import { userSelector , listVariete, listParc, addPrixParc  } from "../../../slices/userSlice";
+import { parcSelector , listParc, addPrixParc  } from "../../../slices/parcSlice";
+import { varieteSelector , listVariete  } from "../../../slices/varieteSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const modalStyle = {
@@ -46,7 +47,8 @@ const modalStyle = {
 function AddPrixParcModal({setShowModal}) {
 
     const dispatch = useDispatch()
-    const { ls_variete , ls_parc} = useSelector(userSelector)
+    const { ls_parc} = useSelector(parcSelector)
+    const { ls_variete } = useSelector(varieteSelector)
 
     useEffect(()=>{
         dispatch(listVariete())

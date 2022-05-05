@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { userSelector, clearState, listMarche, listVariete, listPrixMarche } from "../../slices/userSlice";
+import { marcheSelector, clearState, listMarche, listPrixMarche } from "../../slices/marcheSlice";
+import { listVariete } from "../../slices/varieteSlice";
 import { useSelector, useDispatch } from 'react-redux';
 import Header from '../../Component/Header/Header'
 import Footer from '../../Component/Footer/Footer'
@@ -20,7 +21,7 @@ const Spinner = () =>{
 }
 
 function PrixMarcheContainer() {
-  const { isFetching, isError, ls_prixMarche, prixMarUpdated } = useSelector(userSelector);
+  const { isFetching, isError, ls_prixMarche, prixMarUpdated } = useSelector(marcheSelector);
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
@@ -106,7 +107,7 @@ function PrixMarcheContainer() {
           </div>
             <main className={styles.container}>
               <div className={styles.wrapper}>
-                {isFetching ? <Spinner /> : <Table data={searchData ? searchData :ls_prixMarche} rowsPerPage={3} />}
+                {isFetching ? <Spinner /> : <Table data={searchData ? searchData :ls_prixMarche} rowsPerPage={4} />}
               </div>
             </main>
         </div>

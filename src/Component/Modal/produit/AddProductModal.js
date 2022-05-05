@@ -4,7 +4,7 @@ import icon_profile from '../../../assets/profile-picture.svg'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import convertImgToBase64 from '../../../Utils/helpers'
 import * as Yup from "yup";
-import { createProduit } from "../../../slices/userSlice";
+import { createProduit } from "../../../slices/produitSlice";
 import { useDispatch } from "react-redux";
 
 const modalStyle = {

@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from "react";
 import './modal.css'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { editParc } from "../../../slices/userSlice";
+import { editParc } from "../../../slices/parcSlice";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 
