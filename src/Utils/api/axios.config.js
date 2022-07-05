@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 // Axios instance
 const apiInstance = axios.create({
-  baseURL:  `${process.env.REACT_APP_API_URL}${process.env.REACT_APP_API_BACKEND_VERSION}`,
+  baseURL:  `https://backend-arm.sysstocksn.com${process.env.REACT_APP_API_BACKEND_VERSION}`,
   timeout: 11000,
 });
 

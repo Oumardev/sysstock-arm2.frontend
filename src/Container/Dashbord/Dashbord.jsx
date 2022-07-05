@@ -1,16 +1,19 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { userSelector, clearState } from "../../slices/userSlice";
-import underConstruct from '../../assets/under_construction.svg'
+import Map from './Map';
 import "./styles.css"
 import { useSelector, useDispatch } from 'react-redux';
 import Header from '../../Component/Header/Header'
 import { useNavigate } from 'react-router-dom';
-
+import Info from './Info';
+import Charts from './Charts';
+import Menu from './Menu';
 
 function DashbordContainer() {
   const { isFetching, isSuccess, isError, errorMessage } = useSelector(userSelector);
   const dispatch = useDispatch();
   const navigate = useNavigate()
+  const [showMenu, setShowMenu] = useState(true)
 
    useEffect(() => {
      
@@ -29,8 +32,11 @@ function DashbordContainer() {
     return (
       <>
         <Header />
-        <div className="content">
-            <img class="img-construct" src={underConstruct} alt="en construction" />
+        <div className="main">
+          {/* <Map />
+          <Info /> */}
+          <Menu setShowMenu={setShowMenu} />
+         { showMenu == 'riz_brise' ? <Charts /> : 'Aucune information a afficher'}
         </div>
       </>
     );
