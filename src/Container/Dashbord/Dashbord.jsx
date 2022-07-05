@@ -13,7 +13,7 @@ function DashbordContainer() {
   const { isFetching, isSuccess, isError, errorMessage } = useSelector(userSelector);
   const dispatch = useDispatch();
   const navigate = useNavigate()
-  const [showMenu, setShowMenu] = useState(true)
+  const [showMenu, setShowMenu] = useState('riz_brise')
 
    useEffect(() => {
      

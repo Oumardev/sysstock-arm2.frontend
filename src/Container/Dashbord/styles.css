@@ -78,7 +78,9 @@ button:focus { outline: none; }
 }
 
 .circ-btn{
+    border: 0px;
     border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
     margin: 10px;
     padding: 5px;
 }
@@ -86,14 +88,16 @@ button:focus { outline: none; }
 .menu-mini button{
     border: 0px;
     margin: 5px;
-    padding: 5px;
+    padding: 10px;
     border-radius: 15px;
     color: black;
     background-color: whitesmoke;
-    font-size: 17px;
-    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .menu-mini .active{
-    background-color: #bbaeae;
+    background-color: #3d3b3b;
+    color: white;
 }
